@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <title>RealOrFakeGame</title>
+</head>
+<body>
+    <div>
+        <h3 id = "streak">
+            Streak = 0
+         </h3>
+         <h3 id = "result">
+
+         </h3>
+
+    </div>
+    <div id = "images"></div>
+    <script src="script.js" defer></script>
+    <div class="confetti-container" id="confetti-container"></div>
+
+    <script>
+      // JavaScript to add confetti elements dynamically
+      const confettiContainer = document.getElementById('confetti-container');
+  
+      function createConfetti() {
+        const confettiCount = 100; // Number of confetti particles
+  
+        for (let i = 0; i < confettiCount; i++) {
+          const confetti = document.createElement('div');
+          confetti.classList.add('confetti');
+          confetti.style.left = `${Math.random() * 100}%`; // Random horizontal position
+          confetti.style.animationDelay = `${Math.random() * 2}s`; // Random animation delay
+          confettiContainer.appendChild(confetti);
+        }
+      }
+  
+      // Trigger confetti animation
+      setTimeout(() => {
+        createConfetti();
+      }, 500); // Delay to start confetti animation (in milliseconds)
+    </script>
+  
+</body>
+</html>
